@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.test {
+  position: absolute;
+  top: 0;
+
+  z-index: 0;
+}
