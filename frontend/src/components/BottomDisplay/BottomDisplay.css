@@ -1,0 +1,24 @@
+.bottom-bar {
+    position: fixed;
+    bottom: 3%;
+
+    width: 35%;
+    height: 50px;
+
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 15px;
+}
+
+.bottom-bar p {
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif, bold;
+    font-size: 20px;
+
+    margin: 0;
+    margin-right: 5px;
+}

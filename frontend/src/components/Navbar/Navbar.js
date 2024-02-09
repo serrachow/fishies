@@ -1,9 +1,13 @@
+import ButtonLayout from '../button_layout/button_layout'
 import './Navbar.css'
 
 export default function Navbar() {
   return (
     <div class="glassmorphism main-navbar">
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs">Placeholder</a>
+      
+      <ButtonLayout variant="default" style={{color: "black"}}>
+        Gene Celltype
+      </ButtonLayout>
       <header class="navbar-heading">CBM2</header>
       <header class="navbar-sitename">fisheyes</header>
     </div>

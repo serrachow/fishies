@@ -4,6 +4,8 @@ import './App.css';
 import Graphs from './components/Graphs/Graphs';
 import ButtonLayout from './components/button_layout/button_layout';
 import Coordinates from './components/Coordinates/Coordinates';
+import BottomDisplay from './components/BottomDisplay/BottomDisplay';
+import GeneComponent from './components/BottomDisplay/GeneComponent/GeneComponent';
 
 function App() {
   const handleClick = () => {
@@ -14,11 +16,9 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <ButtonLayout onClick={handleClick} variant="default" >
-        Gene Celltype
-      </ButtonLayout>
       <Coordinates/>
       <Graphs/>
+      <BottomDisplay children={<GeneComponent geneName={"Mature DG neurons"}/>}/>
     </div>
   );
 }
