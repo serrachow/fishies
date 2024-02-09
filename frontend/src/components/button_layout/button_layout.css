@@ -1,12 +1,6 @@
 .btn-default {
-    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.55), rgb(255, 255, 255, 0.2));
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid;
-    border-radius: 10px;
-    border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgb(255, 255, 255, 0));
-
     color: white;
     font-family:'Inter', sans-serif, bold;
+
+    position: relative !important;
 }
