@@ -3,9 +3,11 @@ import './button_layout.css'
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
+
 const ButtonLayout = ({ onClick, children, variant }) => {
   return (
-    <button className={`btn btn-${variant}`} onClick={onClick}>
+    <button className={`btn btn-${variant} glassmorphism`} onClick={onClick}>
       {children}
     </button>
   );

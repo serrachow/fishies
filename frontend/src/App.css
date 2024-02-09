@@ -13,3 +13,13 @@ body {
 
   z-index: 0;
 }
+
+.glassmorphism {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.60), rgb(255, 255, 255, 0.1));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid;
+  border-radius: 0 0 5px 5px;
+  border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgb(255, 255, 255, 0));
+}
