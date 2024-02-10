@@ -2,8 +2,8 @@
     position: fixed;
     bottom: 3%;
 
-    width: 35%;
-    height: 50px;
+    width: 700px;
+    height: 8.5%;
 
     border-radius: 15px;
 
@@ -14,11 +14,12 @@
     padding: 15px;
 }
 
-.bottom-bar > p {
+#showing {
     color: white;
     font-family: 'Plus Jakarta Sans', sans-serif, bold;
-    font-size: 20px;
+    font-size: 16px;
 
     margin: 0;
     margin-right: 5px;
+    width: 70px;
 }

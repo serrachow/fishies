@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import './TextInput.css'
 
-function TextInput({width, height, label}) {
+function TextInput({width, height, label, type="text"}) {
     const [focused, setFocused] = useState(false);
 
     const onFocus = () => setFocused(true)
@@ -13,7 +13,7 @@ function TextInput({width, height, label}) {
 
     return (
         <div className={fieldName} onFocus={onFocus} onBlur={onBlur} style={{width: width, height: height}}>
-            <input type="text" placeholder={label}/>
+            <input type={type} placeholder={label}/>
         </div>
     )
 }

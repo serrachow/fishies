@@ -4,7 +4,7 @@ import './App.css';
 import Graphs from './components/Graphs/Graphs';
 import Coordinates from './components/Coordinates/Coordinates';
 import BottomDisplay from './components/BottomDisplay/BottomDisplay';
-import GeneComponent from './components/BottomDisplay/GeneComponent/GeneComponent';
+import GeneComponent from './components/GeneComponent/GeneComponent';
 import SidePanel from './components/SidePanel/SidePanel';
 
 function App() {
@@ -56,7 +56,14 @@ function App() {
         <GeneComponent geneName={"Mature DG neurons"}/>
       </SidePanel>
       <Graphs/>
-      <BottomDisplay children={<GeneComponent geneName={"Mature DG neurons"}/>}/>
+      <BottomDisplay>
+        <GeneComponent geneName={"Mature DG neurons"}/>
+        <GeneComponent geneName={"Mature DG neurons"}/>
+        <GeneComponent geneName={"Mature DG neurons"}/>
+        <GeneComponent geneName={"Immature Neurons"}/>
+        <GeneComponent geneName={"Immature Neurons"}/>
+        <GeneComponent geneName={"Immature Neurons"}/>
+      </BottomDisplay>
     </div>
   );
 }
