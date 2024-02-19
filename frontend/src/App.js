@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Coordinates/>
-      <SidePanel>
+      {/* <SidePanel>
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>
         <GeneComponent geneName={"Immature DG neurons"}/>
@@ -54,16 +54,20 @@ function App() {
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>
         <GeneComponent geneName={"Mature DG neurons"}/>
-      </SidePanel>
+      </SidePanel> */}
+
+      <SidePanel />
       <Graphs/>
-      <BottomDisplay>
+      {/* <BottomDisplay>
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>
-      </BottomDisplay>
+      </BottomDisplay> */}
+
+      <BottomDisplay gene="Rest"/>
     </div>
   );
 }
