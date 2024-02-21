@@ -47,7 +47,7 @@ function ThreeScene() {
     'clusters_colors'];
 
     let stats = new Stats();
-    document.body.appendChild(stats.dom);
+    mountRef.current.appendChild(stats.dom);
 
     // Fetch all data and combine
     Promise.all(columns.map(fetchDataFromAPI)).then(results => {
@@ -266,7 +266,7 @@ function ThreeScene() {
 
     // Geometry and material for the instanced mesh
 
-    let instancedMesh;
+    let instancedMesh = new THREE.InstancedMesh(new THREE.CircleGeometry(0.1, 32, 32), new THREE.MeshBasicMaterial(), 1);
     let instancedMeshUmap;
 
     async function updateInstancedMesh(filterType = []) {
@@ -369,67 +369,28 @@ function ThreeScene() {
     scene.add(instancedMeshUmap);
     }
 
-    // // Animation loop
-    // function animate() {
-    
-    //     requestAnimationFrame(animate);
-    //     controls.update(); // Only needed if controls.enableDamping is true
-
-    //     // Rotate the instanced mesh
-    //     // instancedMesh.rotation.x += 0.01;
-    //     // instancedMesh.rotation.y += 0.01;
-
-    //     // Set up for cameraOne (75% of the screen)
-    //     renderer.setViewport(0, 0, width * 0.75, height);
-    //     renderer.setScissor(0, 0, width * 0.75, height);
-    //     renderer.setScissorTest(true);
-    //     renderer.render(scene, cameraOne);
-
-    //     // Set up for cameraTwo (25% of the screen)
-    //     renderer.setViewport(width * 0.75, 0, width * 0.25, height);
-    //     renderer.setScissor(width * 0.75, 0, width * 0.25, height);
-    //     renderer.setScissorTest(true);
-    //     renderer.render(scene, cameraTwo);
-
-    //     renderer.setScissorTest(false); // Disable scissor test after rendering
-
-    //     // // Render left side
-    //     // renderer.setScissorTest(true);
-    //     // renderer.setScissor(0, 0, window.innerWidth / 2, window.innerHeight);
-    //     // renderer.setViewport(0, 0, window.innerWidth / 2, window.innerHeight);
-    //     // renderer.render(scene, cameraOne);
-
-    //     // // Render right side
-    //     // renderer.setScissor(window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
-    //     // renderer.setViewport(window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
-    //     // renderer.render(scene, cameraTwo);
-
-    //     // renderer.setScissorTest(false);
-    //     stats.update();
-    // }
-
     function animate() {
     requestAnimationFrame(animate);
     controls.update(); // Only needed if controls.enableDamping is true
 
-    // // Assume your instanced mesh is global or accessible within this scope
-    // const cameraQuaternion = cameraOne.quaternion;
+    // Assume your instanced mesh is global or accessible within this scope
+    const cameraQuaternion = cameraOne.quaternion;
 
-    // for (let i = 0; i < jsonData.length * 2; i++) {
-    //     const matrix = new THREE.Matrix4();
-    //     const position = new THREE.Vector3();
-    //     const scale = new THREE.Vector3();
+    for (let i = 0; i < jsonData.length * 2; i++) {
+        const matrix = new THREE.Matrix4();
+        const position = new THREE.Vector3();
+        const scale = new THREE.Vector3();
         
-    //     // Extract position and scale from the current instance matrix
-    //     instancedMesh.getMatrixAt(i, matrix);
-    //     matrix.decompose(position, new THREE.Quaternion(), scale);
+        // Extract position and scale from the current instance matrix
+        instancedMesh.getMatrixAt(i, matrix);
+        matrix.decompose(position, new THREE.Quaternion(), scale);
 
-    //     // Rebuild the matrix using the camera's quaternion for rotation
-    //     matrix.compose(position, cameraQuaternion, scale);
-    //     instancedMesh.setMatrixAt(i, matrix);
-    // }
+        // Rebuild the matrix using the camera's quaternion for rotation
+        matrix.compose(position, cameraQuaternion, scale);
+        instancedMesh.setMatrixAt(i, matrix);
+    }
 
-    // instancedMesh.instanceMatrix.needsUpdate = true; // Important!
+    instancedMesh.instanceMatrix.needsUpdate = true; // Important!
 
     // Your rendering logic...
     renderer.setViewport(0, 0, width * 0.75, height);
