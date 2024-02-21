@@ -18,6 +18,63 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@<version>/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
+        }
+      }
+    </script>
+    <title>fisheyes by kj</title>
+    <style>
+        body { margin: 0; }
+        #toggleCheckboxContainer {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            z-index: 100;
+        }
+        .checkbox-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 70vh; /* Set maximum height relative to viewport */
+        }
+
+        .myTextbox {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            z-index: 100;
+        }
+
+        .plus-jakarta-sans-regular {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400; /* Regular weight */
+            font-style: normal;
+        }
+        .plus-jakarta-sans-bold {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700; /* Bold weight */
+            font-style: normal;
+        }
+        /* Apply the font globally */
+        body {
+            margin: 0;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+    </style>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -42,5 +99,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <button id="toggleCheckboxContainer" >Toggle Filters</button>
+
+    <div class="checkbox-container" id="checkboxContainer"  style="display: none;">
+        <!-- Textbox input -->
+        <input type="text" id="myTextbox" placeholder="Enter text here">
+
+        <!-- Button to trigger the function -->
+        <button id="myButton">Submit</button>
+    </div>
+    <!-- Rest of your buttons and container -->
+    <div id="container"></div>
   </body>
 </html>
+
