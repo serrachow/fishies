@@ -16,7 +16,9 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Coordinates/>
+      <div className="coordinates-container">
+        <Coordinates/> <Coordinates/>
+      </div>
       <SidePanel>
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>

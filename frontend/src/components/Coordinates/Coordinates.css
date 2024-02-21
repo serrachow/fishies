@@ -1,4 +1,14 @@
 .coordinates {
+    display: flex;
+    flex-direction: row;
     position: relative;
     z-index: 1;
+    padding: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
