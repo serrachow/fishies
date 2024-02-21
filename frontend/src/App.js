@@ -19,7 +19,7 @@ function App() {
       <div className="coordinates-container">
         <Coordinates/> <Coordinates/>
       </div>
-      <SidePanel>
+      {/* <SidePanel>
         <GeneComponent geneName={"Mature DG neurons"}/>
         <GeneComponent geneName={"Immature Neurons"}/>
         <GeneComponent geneName={"Immature DG neurons"}/>
