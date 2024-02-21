@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div class="glassmorphism main-navbar">
       
-      <ButtonLayout variant="default" style={{color: 'white'}}>
+      <ButtonLayout variant="default">
         Gene Celltype
       </ButtonLayout>
       <header class="navbar-heading">CBM2</header>
